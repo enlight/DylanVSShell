@@ -16,10 +16,14 @@ incompatible with the Express editions. The isolated shell on the other hand
 can run side-by-side with any other editions of Visual Studio you may have
 installed.
 
+While initial development will target the isolated shell there's little reason
+why the extensions can't work in the integrated shell, it would simply require
+two separate installers.
+
 Compiling
 =========
 
-Requirments
+Requirements
 -----------
-* `Visual Studio 2012 SDK <https://www.microsoft.com/en-au/download/details.aspx?id=30668>`_
 * Visual Studio 2012
+* `Visual Studio 2012 SDK <https://www.microsoft.com/en-au/download/details.aspx?id=30668>`_
