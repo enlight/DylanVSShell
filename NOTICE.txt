@@ -1,0 +1,2 @@
+The "Managed Package Framework for Projects" code in the MPFProj11 directory
+is licensed under the Microsoft Public License.
