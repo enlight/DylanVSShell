@@ -20,6 +20,11 @@ While initial development will target the isolated shell there's little reason
 why the extensions can't work in the integrated shell, it would simply require
 two separate installers.
 
+Roadmap
+=======
+
+See `Milestones <https://github.com/enlight/DylanVSShell/issues/milestones>`_.
+
 Compiling
 =========
 
