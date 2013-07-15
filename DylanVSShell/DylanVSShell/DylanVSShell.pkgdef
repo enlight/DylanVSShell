@@ -15,4 +15,4 @@
                                   $ShellFolder$\Common7\IDE\CommonExtensions\Microsoft\Windows Forms Designer UI; \
                                   $ShellFolder$\Common7\IDE\CommonExtensions\Microsoft\ReportingServices; \
                                   $ApplicationExtensionsFolder$"
-"RegistryRoot"                 = "Software\My Company\DylanVSShell\1.0"
+"RegistryRoot"                 = "Software\Vadim Macagon\DylanVSShell\1.0"

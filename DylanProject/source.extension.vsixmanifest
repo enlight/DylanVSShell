@@ -1,17 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="d76a79e6-a1d0-4600-9f46-85ba23396abf" Version="1.0" Language="en-US" Publisher="Vadim Macagon" />
-    <DisplayName>About Box Package</DisplayName>
-    <Description>Information about DylanVSShell About Box package</Description>
+    <Identity Id="2444c21d-c0fc-4c79-b300-c544658fefc6" Version="1.0" Language="en-US" Publisher="Vadim Macagon" />
+    <DisplayName>DylanProject</DisplayName>
+    <Description>This extension provides a project system for the Dylan programming language.</Description>
   </Metadata>
-  <Installation InstalledByMsi="true" SystemComponent="true">
+  <Installation InstalledByMsi="true">
     <InstallationTarget Id="DylanVSShell" Version="1.0" />
   </Installation>
   <Dependencies>
     <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="4.5" />
+    <Dependency Id="Microsoft.VisualStudio.MPF.11.0" DisplayName="Visual Studio MPF 11.0" d:Source="Installed" Version="11.0" />
   </Dependencies>
   <Assets>
     <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+    <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="Project" d:ProjectName="%CurrentProject%" d:TargetPath="|%CurrentProject%;TemplateProjectOutputGroup|" Path="ProjectTemplates" d:VsixSubPath="ProjectTemplates" />
   </Assets>
 </PackageManifest>

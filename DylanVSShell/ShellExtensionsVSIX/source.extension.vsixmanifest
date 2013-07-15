@@ -1,17 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="7e531647-1ae0-4a30-aa1e-264284bf9296" Version="1.0" Language="en-US" Publisher="My Company" />
+    <Identity Id="7e531647-1ae0-4a30-aa1e-264284bf9296" Version="1.0" Language="en-US" Publisher="Vadim Macagon" />
     <DisplayName>Shell VSIX manifest</DisplayName>
     <Description>Core extensions for DylanVSShell</Description>
+    <License>Whatever</License>
+    <GettingStartedGuide>github.com</GettingStartedGuide>
+    <ReleaseNotes>None</ReleaseNotes>
+    <Tags>Awesome</Tags>
   </Metadata>
   <Installation InstalledByMsi="true" SystemComponent="true">
     <InstallationTarget Id="DylanVSShell" Version="1.0" />
   </Installation>
   <Dependencies>
     <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="4.5" />
+    <Dependency d:Source="Installed" Id="Microsoft.VisualStudio.MPF.11.0" DisplayName="Visual Studio MPF 11.0" Version="[11.0,12.0)" />
   </Dependencies>
   <Assets>
     <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="DylanVSShell.AboutBoxPackage" Path="|DylanVSShell.AboutBoxPackage;PkgdefProjectOutputGroup|" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="DylanProject" Path="|DylanProject;PkgdefProjectOutputGroup|" />
   </Assets>
 </PackageManifest>

@@ -1,0 +1,20 @@
+﻿<VSTemplate Version="2.0.0" Type="Project"
+    xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>Dylan Application</Name>
+    <Description>A project for creating a Dylan application.</Description>
+    <Icon>DylanProject.ico</Icon>
+    <!-- ProjectType must match DylanConstants.LanguageName -->
+    <ProjectType>Dylan</ProjectType>
+    <DefaultName>application</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="DylanApp.dylproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" OpenInEditor="true" 
+                   TargetFileName="$safeprojectname$.dylan">
+        application.dylan
+      </ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

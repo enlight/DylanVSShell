@@ -14,6 +14,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DylanVSShell.AboutBoxPackag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShellExtensionsVSIX", "DylanVSShell\ShellExtensionsVSIX\ShellExtensionsVSIX.csproj", "{976C1986-FD5E-447A-BFC8-5A74D4100847}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0B573BAC-D812-4906-AA21-AEF7362FBA51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DylanProject", "DylanProject\DylanProject.csproj", "{AF55A259-F1AB-49A4-B8CE-F2D5E343FE99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,6 +68,16 @@ Global
 		{976C1986-FD5E-447A-BFC8-5A74D4100847}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{976C1986-FD5E-447A-BFC8-5A74D4100847}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{976C1986-FD5E-447A-BFC8-5A74D4100847}.Release|Win32.ActiveCfg = Release|Any CPU
+		{AF55A259-F1AB-49A4-B8CE-F2D5E343FE99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF55A259-F1AB-49A4-B8CE-F2D5E343FE99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF55A259-F1AB-49A4-B8CE-F2D5E343FE99}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{AF55A259-F1AB-49A4-B8CE-F2D5E343FE99}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{AF55A259-F1AB-49A4-B8CE-F2D5E343FE99}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{AF55A259-F1AB-49A4-B8CE-F2D5E343FE99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF55A259-F1AB-49A4-B8CE-F2D5E343FE99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF55A259-F1AB-49A4-B8CE-F2D5E343FE99}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{AF55A259-F1AB-49A4-B8CE-F2D5E343FE99}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{AF55A259-F1AB-49A4-B8CE-F2D5E343FE99}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

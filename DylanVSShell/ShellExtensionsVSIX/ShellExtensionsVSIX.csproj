@@ -58,6 +58,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\DylanProject\DylanProject.csproj">
+      <Project>{AF55A259-F1AB-49A4-B8CE-F2D5E343FE99}</Project>
+      <Name>DylanProject</Name>
+      <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bSatelliteDllsProjectOutputGroup%3bPkgdefProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+      <IncludeOutputGroupsInVSIXLocalOnly>DebugSymbolsProjectOutputGroup%3b</IncludeOutputGroupsInVSIXLocalOnly>
+    </ProjectReference>
     <ProjectReference Include="..\DylanVSShell.AboutBoxPackage\DylanVSShell.AboutBoxPackage.csproj">
       <Name>DylanVSShell.AboutBoxPackage</Name>
       <IncludeOutputGroupsInVSIX>
