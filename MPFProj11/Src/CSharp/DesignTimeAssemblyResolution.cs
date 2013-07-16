@@ -82,7 +82,10 @@ namespace Microsoft.VisualStudio.Project
 
             if (projectNode.CallMSBuild("GetFrameworkPaths") != MSBuildResult.Successful)
             {
-                throw new InvalidOperationException("Build of GetFrameworkPaths failed.");
+                // FIXME: This always fails when loading .dylproj projects, haven't yet
+                // figured out why. However, since we're not targeting the .NET Framework at this 
+                // point, we don't really need this PITA at the moment.
+                //throw new InvalidOperationException("Build of GetFrameworkPaths failed.");
             }
 
             this.rarInputs = new RarInputs(projectNode.CurrentConfig);
