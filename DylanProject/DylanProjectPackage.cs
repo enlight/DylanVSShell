@@ -34,6 +34,7 @@ namespace DylanVSShell.DylanProject
 		"dylproj", "dylproj", 
 		".\\NullPath", 
 		LanguageVsTemplate = DylanConstants.LanguageName)]
+    [ProvideObject(typeof(DylanGeneralPropertyPage))]
     [Guid(GuidList.guidDylanProjectPkgString)]
     public sealed class DylanProjectPackage : ProjectPackage
 	{

@@ -124,6 +124,7 @@
   <Import Project="$(ProjectBasePath)ProjectBase.Files" />
   <ItemGroup>
     <Compile Include="DylanConstants.cs" />
+    <Compile Include="DylanGeneralPropertyPage.cs" />
     <Compile Include="DylanProjectFactory.cs" />
     <Compile Include="DylanProjectNode.cs" />
     <Compile Include="Guids.cs" />
@@ -164,7 +165,9 @@
     <ZipProject Include="Templates\Projects\DylanApp\DylanApp.vstemplate">
       <SubType>Designer</SubType>
     </ZipProject>
-    <ZipProject Include="Templates\Projects\DylanApp\DylanApp.dylproj" />
+    <ZipProject Include="Templates\Projects\DylanApp\DylanApp.dylproj">
+      <SubType>Designer</SubType>
+    </ZipProject>
     <Resource Include="Resources\DylanProject.ico" />
     <Content Include="Resources\Package.ico" />
   </ItemGroup>

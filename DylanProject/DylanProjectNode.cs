@@ -7,6 +7,9 @@ using Microsoft.VisualStudio.Project;
 
 namespace DylanVSShell.DylanProject
 {
+	/// <summary>
+	/// This class represents Dylan projects in the Solution Explorer.
+	/// </summary>
 	public class DylanProjectNode : ProjectNode
 	{
 		private DylanProjectPackage _package;
@@ -30,6 +33,11 @@ namespace DylanVSShell.DylanProject
 		{
 			this.FileTemplateProcessor.UntokenFile(source, target);
 			this.FileTemplateProcessor.Reset();
+		}
+
+		protected override Guid[] GetConfigurationIndependentPropertyPages()
+		{
+			return new[] { typeof(DylanGeneralPropertyPage).GUID };
 		}
 	}
 }
