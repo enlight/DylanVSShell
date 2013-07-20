@@ -35,6 +35,8 @@ namespace DylanVSShell.DylanProject
         public DylanProjectNode(DylanProjectPackage package)
         {
             _package = package;
+            Type projectNodePropsType = typeof(DylanProjectNodeProperties);
+            this.AddCATIDMapping(projectNodePropsType, projectNodePropsType.GUID);
         }
 
         public override Guid ProjectGuid
@@ -56,6 +58,11 @@ namespace DylanVSShell.DylanProject
         protected override Guid[] GetConfigurationIndependentPropertyPages()
         {
             return new[] { typeof(DylanGeneralPropertyPage).GUID };
+        }
+
+        protected override NodeProperties CreatePropertiesObject()
+        {
+            return new DylanProjectNodeProperties(this);
         }
     }
 }
