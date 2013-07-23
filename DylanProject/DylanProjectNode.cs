@@ -18,25 +18,43 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.Project;
+using Microsoft.VisualStudio.Project.Automation;
+using System.ComponentModel;
+using System.Runtime.InteropServices;
 
 namespace DylanVSShell.DylanProject
 {
     /// <summary>
     /// This class represents Dylan projects in the Solution Explorer.
     /// </summary>
+    [Guid(DylanConstants.ProjectNodeGuidString)]
     public class DylanProjectNode : ProjectNode
     {
         private DylanProjectPackage _package;
+        private VSLangProj.VSProject _vsProject;
 
         public DylanProjectNode(DylanProjectPackage package)
         {
+            Contract.Assert(package != null);
+
             _package = package;
-            Type projectNodePropsType = typeof(DylanProjectNodeProperties);
-            this.AddCATIDMapping(projectNodePropsType, projectNodePropsType.GUID);
+
+            OleServiceProvider.AddService(
+                typeof(VSLangProj.VSProject),
+                new OleServiceProvider.ServiceCreatorCallback(this.CreateServices), false);
+
+            this.AddCATIDMapping(typeof(OAProject), typeof(OAProject).GUID);
+            this.AddCATIDMapping(
+                typeof(DylanGeneralPropertyPage),
+                typeof(DylanGeneralPropertyPage).GUID);
+            this.AddCATIDMapping(
+                typeof(DylanProjectNodeProperties),
+                typeof(DylanProjectNodeProperties).GUID);
         }
 
         public override Guid ProjectGuid
@@ -47,6 +65,11 @@ namespace DylanVSShell.DylanProject
         public override string ProjectType
         {
             get { return "DylanProjectType"; }
+        }
+
+        protected internal VSLangProj.VSProject VSProject
+        {
+            get { return _vsProject ?? (_vsProject = new OAVSProject(this)); }
         }
 
         public override void AddFileFromTemplate(string source, string target)
@@ -63,6 +86,34 @@ namespace DylanVSShell.DylanProject
         protected override NodeProperties CreatePropertiesObject()
         {
             return new DylanProjectNodeProperties(this);
+        }
+
+        public override FileNode CreateFileNode(ProjectElement item)
+        {
+            var node = new DylanFileNode(this, item);
+            node.OleServiceProvider.AddService(
+                typeof(EnvDTE.Project),
+                new OleServiceProvider.ServiceCreatorCallback(this.CreateServices), false);
+            node.OleServiceProvider.AddService(
+                typeof(EnvDTE.ProjectItem), node.ServiceCreator, false);
+            node.OleServiceProvider.AddService(
+                typeof(VSLangProj.VSProject),
+                new OleServiceProvider.ServiceCreatorCallback(this.CreateServices), false);
+            return node;
+        }
+
+        private object CreateServices(Type serviceType)
+        {
+            object service = null;
+            if (typeof(VSLangProj.VSProject) == serviceType)
+            {
+                service = this.VSProject;
+            }
+            else if (typeof(EnvDTE.Project) == serviceType)
+            {
+                service = this.GetAutomationObject();
+            }
+            return service;
         }
     }
 }

@@ -124,6 +124,7 @@
   <Import Project="$(ProjectBasePath)ProjectBase.Files" />
   <ItemGroup>
     <Compile Include="DylanConstants.cs" />
+    <Compile Include="DylanFileNode.cs" />
     <Compile Include="DylanGeneralPropertyPage.cs" />
     <Compile Include="DylanProjectFactory.cs" />
     <Compile Include="DylanProjectNode.cs" />
