@@ -1,0 +1,25 @@
+﻿<VSTemplate Version="2.0.0" Type="Project"
+    xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>From Existing Dylan Code</Name>
+    <Description>Create a project from an existing Dylan code base.</Description>
+    <Icon>FromExistingCode.ico</Icon>
+    <!-- ProjectType must match DylanConstants.LanguageName -->
+    <ProjectType>Dylan</ProjectType>
+    <CreateNewFolder>false</CreateNewFolder>
+    <DefaultName>application</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="FromExistingCode.dylproj" ReplaceParameters="true">
+    </Project>
+  </TemplateContent>
+  <!-- Use the corresponding wizard from the DylanImportWizard assembly. -->
+  <WizardExtension>
+    <Assembly>
+      DylanVSShell.DylanImportWizard, Version=1.0.0.0, Culture=neutral,
+      PublicKeyToken=2a6d84b5f8b07729
+    </Assembly>
+    <FullClassName>DylanVSShell.DylanImportWizard.Wizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

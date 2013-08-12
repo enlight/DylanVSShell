@@ -4,6 +4,10 @@ using System;
 
 namespace DylanVSShell.DylanProject
 {
+    /// <summary>
+    /// This class is used only to expose the list of Guids used by this package.
+    /// This list of guids must match the set of Guids used inside the VSCT file.
+    /// </summary>
     static class GuidList
     {
         public const string guidDylanProjectPkgString = "2444c21d-c0fc-4c79-b300-c544658fefc6";

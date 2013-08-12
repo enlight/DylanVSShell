@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DylanProject", "DylanProject\DylanProject.csproj", "{AF55A259-F1AB-49A4-B8CE-F2D5E343FE99}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DylanImportWizard", "DylanImportWizard\DylanImportWizard.csproj", "{A997AC8D-2DD3-4F90-928D-015C9CFF5796}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -78,6 +80,16 @@ Global
 		{AF55A259-F1AB-49A4-B8CE-F2D5E343FE99}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{AF55A259-F1AB-49A4-B8CE-F2D5E343FE99}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{AF55A259-F1AB-49A4-B8CE-F2D5E343FE99}.Release|Win32.ActiveCfg = Release|Any CPU
+		{A997AC8D-2DD3-4F90-928D-015C9CFF5796}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A997AC8D-2DD3-4F90-928D-015C9CFF5796}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A997AC8D-2DD3-4F90-928D-015C9CFF5796}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A997AC8D-2DD3-4F90-928D-015C9CFF5796}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A997AC8D-2DD3-4F90-928D-015C9CFF5796}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{A997AC8D-2DD3-4F90-928D-015C9CFF5796}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A997AC8D-2DD3-4F90-928D-015C9CFF5796}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A997AC8D-2DD3-4F90-928D-015C9CFF5796}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A997AC8D-2DD3-4F90-928D-015C9CFF5796}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A997AC8D-2DD3-4F90-928D-015C9CFF5796}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
