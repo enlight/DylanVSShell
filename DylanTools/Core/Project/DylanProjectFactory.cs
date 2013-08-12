@@ -31,9 +31,9 @@ namespace DylanTools.Core.Project
     [Guid(GuidList.GuidDylanProjectFactoryString)]
     internal class DylanProjectFactory : ProjectFactory
     {
-        private DylanProjectPackage _package;
+        private DylanToolsCorePackage _package;
 
-        public DylanProjectFactory(DylanProjectPackage package)
+        public DylanProjectFactory(DylanToolsCorePackage package)
             : base(package)
         {
             _package = package;

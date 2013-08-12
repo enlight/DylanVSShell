@@ -35,10 +35,10 @@ namespace DylanTools.Core.Project
     [Guid(DylanConstants.ProjectNodeGuidString)]
     public class DylanProjectNode : ProjectNode
     {
-        private DylanProjectPackage _package;
+        private DylanToolsCorePackage _package;
         private VSLangProj.VSProject _vsProject;
 
-        public DylanProjectNode(DylanProjectPackage package)
+        public DylanProjectNode(DylanToolsCorePackage package)
         {
             Contract.Assert(package != null);
 

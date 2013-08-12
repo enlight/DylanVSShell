@@ -55,7 +55,7 @@ namespace DylanTools.Core
 		LanguageVsTemplate = DylanConstants.LanguageName)]
 	[ProvideObject(typeof(DylanGeneralPropertyPage))]
 	[Guid(GuidList.GuidDylanToolsCorePkgString)]
-	public sealed class DylanProjectPackage : ProjectPackage
+	public sealed class DylanToolsCorePackage : ProjectPackage
 	{
 		#region properties
 
@@ -73,7 +73,7 @@ namespace DylanTools.Core
 		/// not sited yet inside Visual Studio environment. The place to do all the other 
 		/// initialization is the Initialize method.
 		/// </summary>
-		public DylanProjectPackage()
+		public DylanToolsCorePackage()
 		{
 			Debug.WriteLine(string.Format(CultureInfo.CurrentCulture, "Entering constructor for: {0}",
 			                              this.ToString()));
