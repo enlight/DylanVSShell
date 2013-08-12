@@ -4,10 +4,6 @@
     <Identity Id="7e531647-1ae0-4a30-aa1e-264284bf9296" Version="1.0" Language="en-US" Publisher="Vadim Macagon" />
     <DisplayName>Shell VSIX manifest</DisplayName>
     <Description>Core extensions for DylanVSShell</Description>
-    <License>Whatever</License>
-    <GettingStartedGuide>github.com</GettingStartedGuide>
-    <ReleaseNotes>None</ReleaseNotes>
-    <Tags>Awesome</Tags>
   </Metadata>
   <Installation InstalledByMsi="true" SystemComponent="true">
     <InstallationTarget Id="DylanVSShell" Version="1.0" />
@@ -18,6 +14,6 @@
   </Dependencies>
   <Assets>
     <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="DylanVSShell.AboutBoxPackage" Path="|DylanVSShell.AboutBoxPackage;PkgdefProjectOutputGroup|" />
-    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="DylanProject" Path="|DylanProject;PkgdefProjectOutputGroup|" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="Core" Path="|Core;PkgdefProjectOutputGroup|" />
   </Assets>
 </PackageManifest>

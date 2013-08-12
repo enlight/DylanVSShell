@@ -2,7 +2,7 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
     <Identity Id="2444c21d-c0fc-4c79-b300-c544658fefc6" Version="1.0" Language="en-US" Publisher="Vadim Macagon" />
-    <DisplayName>DylanProject</DisplayName>
+    <DisplayName>DylanTools.Core</DisplayName>
     <Description>This extension provides a project system for the Dylan programming language.</Description>
   </Metadata>
   <Installation InstalledByMsi="true">

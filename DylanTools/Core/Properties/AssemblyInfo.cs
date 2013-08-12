@@ -7,12 +7,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DylanProject")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("DylanTools.Core")]
+[assembly: AssemblyDescription("VS extensions that provide support for the Dylan language.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Vadim Macagon")]
-[assembly: AssemblyProduct("DylanProject")]
-[assembly: AssemblyCopyright("")]
+[assembly: AssemblyCompany("Macagon")]
+[assembly: AssemblyProduct("Dylan Tools for Visual Studio")]
+[assembly: AssemblyCopyright("Copyright ©  2013  Vadim Macagon")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]   
 [assembly: ComVisible(false)]     

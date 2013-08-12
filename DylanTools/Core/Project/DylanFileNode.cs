@@ -22,7 +22,7 @@ using Microsoft.VisualStudio.Project;
 using Microsoft.VisualStudio.Project.Automation;
 using VSLangProj;
 
-namespace DylanVSShell.DylanProject
+namespace DylanTools.Core.Project
 {
     internal class DylanFileNode : FileNode
     {

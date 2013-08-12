@@ -7,8 +7,8 @@
     <ProjectGuid>{A997AC8D-2DD3-4F90-928D-015C9CFF5796}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DylanVSShell.DylanImportWizard</RootNamespace>
-    <AssemblyName>DylanVSShell.DylanImportWizard</AssemblyName>
+    <RootNamespace>DylanTools.DylanImportWizard</RootNamespace>
+    <AssemblyName>DylanTools.DylanImportWizard</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -52,10 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\DylanProject\Guids.cs">
+    <Compile Include="..\Core\Guids.cs">
       <Link>Guids.cs</Link>
     </Compile>
-    <Compile Include="..\DylanProject\PkgCmdID.cs">
+    <Compile Include="..\Core\PkgCmdID.cs">
       <Link>PkgCmdID.cs</Link>
     </Compile>
     <Compile Include="Wizard.cs" />

@@ -22,7 +22,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DylanVSShell.DylanProject
+namespace DylanTools.Core
 {
     public static class DylanConstants
     {

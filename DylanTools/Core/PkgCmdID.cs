@@ -1,5 +1,5 @@
 ﻿
-namespace DylanVSShell.DylanProject
+namespace DylanTools.Core
 {
     class PkgCmdIDList
     {

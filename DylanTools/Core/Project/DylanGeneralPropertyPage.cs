@@ -22,7 +22,7 @@ using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 
-namespace DylanVSShell.DylanProject
+namespace DylanTools.Core.Project
 {
     /// <summary>
     /// This class implements the General project property page for a Dylan project.

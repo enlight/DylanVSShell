@@ -17,9 +17,9 @@
   <!-- Use the corresponding wizard from the DylanImportWizard assembly. -->
   <WizardExtension>
     <Assembly>
-      DylanVSShell.DylanImportWizard, Version=1.0.0.0, Culture=neutral,
+      DylanTools.DylanImportWizard, Version=1.0.0.0, Culture=neutral,
       PublicKeyToken=2a6d84b5f8b07729
     </Assembly>
-    <FullClassName>DylanVSShell.DylanImportWizard.Wizard</FullClassName>
+    <FullClassName>DylanTools.DylanImportWizard.Wizard</FullClassName>
   </WizardExtension>
 </VSTemplate>

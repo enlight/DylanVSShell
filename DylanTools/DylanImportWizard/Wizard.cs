@@ -17,13 +17,13 @@
 #endregion
 
 using System.Windows.Forms;
-using DylanVSShell.DylanProject;
+using DylanTools.Core;
 using EnvDTE;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.TemplateWizard;
 using System.Collections.Generic;
 
-namespace DylanVSShell.DylanImportWizard
+namespace DylanTools.DylanImportWizard
 {
     /// <summary>
     /// This wizard is used in conjuction with the "From Existing Code" project template to create
@@ -73,7 +73,7 @@ namespace DylanVSShell.DylanImportWizard
                         object inObj = null;
                         object outObj = null;
                         dte.Commands.Raise(
-                            GuidList.guidDylanProjectCmdSet.ToString("B"),
+                            GuidList.GuidDylanToolsCoreCmdSet.ToString("B"),
                             (int)PkgCmdIDList.CmdIdImportWizard, ref inObj, ref outObj
                         );
                     }

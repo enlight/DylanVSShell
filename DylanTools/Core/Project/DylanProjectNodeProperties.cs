@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 using Microsoft.VisualStudio.Project;
 using System.ComponentModel;
 
-namespace DylanVSShell.DylanProject
+namespace DylanTools.Core.Project
 {
     /// <summary>
     /// This class exposes Dylan project properties to the Properties window in VS.

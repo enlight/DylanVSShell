@@ -27,7 +27,7 @@ using Microsoft.VisualStudio.Project.Automation;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 
-namespace DylanVSShell.DylanProject
+namespace DylanTools.Core.Project
 {
     /// <summary>
     /// This class represents Dylan projects in the Solution Explorer.

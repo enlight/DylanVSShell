@@ -2,7 +2,7 @@
 // MUST match guids.h
 using System;
 
-namespace DylanVSShell.DylanProject
+namespace DylanTools.Core
 {
     /// <summary>
     /// This class is used only to expose the list of Guids used by this package.
@@ -10,12 +10,12 @@ namespace DylanVSShell.DylanProject
     /// </summary>
     static class GuidList
     {
-        public const string guidDylanProjectPkgString = "2444c21d-c0fc-4c79-b300-c544658fefc6";
-        public const string guidDylanProjectCmdSetString = "131d104d-51e2-4b78-a60d-1985973eda31";
+        public const string GuidDylanToolsCorePkgString = "2444c21d-c0fc-4c79-b300-c544658fefc6";
+        public const string GuidDylanToolsCoreCmdSetString = "131d104d-51e2-4b78-a60d-1985973eda31";
 	    public const string GuidDylanProjectFactoryString = "A433481A-4553-4DAA-BE69-2F2AB94C12BE";
 
-        public static readonly Guid guidDylanProjectCmdSet = 
-			new Guid(guidDylanProjectCmdSetString);
+        public static readonly Guid GuidDylanToolsCoreCmdSet = 
+			new Guid(GuidDylanToolsCoreCmdSetString);
 		public static readonly Guid GuidDylanProjectFactory = 
 			new Guid(GuidDylanProjectFactoryString);
     };

@@ -26,7 +26,7 @@ using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Project;
 using IOleServiceProvider = Microsoft.VisualStudio.OLE.Interop.IServiceProvider;
 
-namespace DylanVSShell.DylanProject
+namespace DylanTools.Core.Project
 {
     [Guid(GuidList.GuidDylanProjectFactoryString)]
     internal class DylanProjectFactory : ProjectFactory
