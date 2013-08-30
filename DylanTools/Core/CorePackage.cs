@@ -17,17 +17,22 @@
 #endregion
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.Runtime.InteropServices;
 using System.ComponentModel.Design;
+using System.Windows.Forms;
+using DylanTools.Core.Commands;
 using DylanTools.Core.Project;
+using EnvDTE;
 using Microsoft.Win32;
 using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.OLE.Interop;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Project;
+using Command = DylanTools.Core.Commands.Command;
 
 namespace DylanTools.Core
 {
@@ -47,6 +52,14 @@ namespace DylanTools.Core
 	// This attribute is used to register the information needed to show this package
 	// in the Help/About dialog of Visual Studio.
 	[InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)]
+    // This attribute lets the shell know this package provides some menus.
+    [ProvideMenuResource(1000, 1)]
+    // These two attributes ensure the ImportWizardCommand is always registered.
+    // This is necessary because Visual Studio lazy loads packages by default, and since the
+    // ImportWizardCommand is associated with an invisible menu item VS may not bother loading this
+    // package.
+    [ProvideAutoLoad(Microsoft.VisualStudio.Shell.Interop.UIContextGuids.NoSolution)]
+    [ProvideAutoLoad(Microsoft.VisualStudio.Shell.Interop.UIContextGuids.SolutionExists)]
 	[ProvideProjectFactory(
 		typeof(DylanProjectFactory), null,
 		"Dylan Project Files (*.dylproj);*.dylproj",
@@ -63,6 +76,14 @@ namespace DylanTools.Core
 		{
 			get { return ""; }
 		}
+
+        /// <summary>
+        /// Obtains the highest level object in the Visual Studio automation model hierarchy.
+        /// </summary>
+        public EnvDTE.DTE AutomationRoot
+        {
+            get { return (EnvDTE.DTE)GetService(typeof(EnvDTE.DTE)); }
+        }
 
 		#endregion
 
@@ -85,8 +106,9 @@ namespace DylanTools.Core
 		#region Package Members
 
 		/// <summary>
-		/// Initialization of the package; this method is called right after the package is sited, so this is the place
-		/// where you can put all the initialization code that rely on services provided by VisualStudio.
+		/// Initialization of the package; this method is called right after the package is sited, 
+		/// so this is the place where you can put all the initialization code that rely on 
+		/// services provided by VisualStudio.
 		/// </summary>
 		protected override void Initialize()
 		{
@@ -94,8 +116,48 @@ namespace DylanTools.Core
 			                              this.ToString()));
 			base.Initialize();
 			this.RegisterProjectFactory(new DylanProjectFactory(this));
+            // these commands must exist in the Core.vsct file
+		    this.RegisterCommands(new Command[] {
+		        new ImportWizardCommand()
+		    });
+
+            var dte = AutomationRoot;
+            if (dte == null)
+            {
+                MessageBox.Show(
+                    "No automation object available.",
+                    "Dylan Tools for Visual Studio"
+                );
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("{0} commands found:", dte.Commands.Count);
+                //foreach (EnvDTE.Command command in dte.Commands)
+                //{
+                //    System.Diagnostics.Debug.WriteLine("{0}, {1}, {2}, Enabled = {3}", command.Name, command.Guid, command.ID, command.IsAvailable);
+                //}   
+            }
 		}
 
 		#endregion
+
+        /// <summary>
+        /// Register the given commands with Visual Studio.
+        /// </summary>
+        /// <param name="commands">A collection of commands to be registered.</param>
+        private void RegisterCommands(IEnumerable<Command> commands)
+        {
+            var omcs = GetService(typeof(IMenuCommandService)) as OleMenuCommandService;
+            if (null != omcs)
+            {
+                foreach (var command in commands)
+                {
+                    var cmdId = 
+                        new CommandID(GuidList.GuidDylanToolsCoreCmdSet, (int)command.CommandId);
+                    omcs.AddCommand(new MenuCommand(command.Execute, cmdId));
+                    Debug.Assert(omcs.FindCommand(cmdId) != null);
+                }
+            }
+        }
 	}
 }

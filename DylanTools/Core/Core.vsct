@@ -41,7 +41,7 @@
          must be a menu. -->
     <Groups>
       <!-- Our group of menu items which is displayed on Tools/Dylan Tools/...  -->
-      <Group guid="GuidDylanToolsCoreCmdSet" id="ToolsMenuItemsGroup" priority="0x0600">
+      <Group guid="GuidDylanToolsCoreCmdSet" id="ToolsMenuItemsGroup" priority="0x0800">
         <Parent guid="GuidDylanToolsCoreCmdSet" id="ToolsMenu"/>
       </Group>
     </Groups>
