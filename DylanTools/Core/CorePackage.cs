@@ -53,7 +53,7 @@ namespace DylanTools.Core
 	// in the Help/About dialog of Visual Studio.
 	[InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)]
     // This attribute lets the shell know this package provides some menus.
-    [ProvideMenuResource(1000, 1)]
+    [ProvideMenuResource("Menus.ctmenu", 1)]
     // These two attributes ensure the ImportWizardCommand is always registered.
     // This is necessary because Visual Studio lazy loads packages by default, and since the
     // ImportWizardCommand is associated with an invisible menu item VS may not bother loading this
@@ -120,23 +120,6 @@ namespace DylanTools.Core
 		    this.RegisterCommands(new Command[] {
 		        new ImportWizardCommand()
 		    });
-
-            var dte = AutomationRoot;
-            if (dte == null)
-            {
-                MessageBox.Show(
-                    "No automation object available.",
-                    "Dylan Tools for Visual Studio"
-                );
-            }
-            else
-            {
-                System.Diagnostics.Debug.WriteLine("{0} commands found:", dte.Commands.Count);
-                //foreach (EnvDTE.Command command in dte.Commands)
-                //{
-                //    System.Diagnostics.Debug.WriteLine("{0}, {1}, {2}, Enabled = {3}", command.Name, command.Guid, command.ID, command.IsAvailable);
-                //}   
-            }
 		}
 
 		#endregion
@@ -155,7 +138,6 @@ namespace DylanTools.Core
                     var cmdId = 
                         new CommandID(GuidList.GuidDylanToolsCoreCmdSet, (int)command.CommandId);
                     omcs.AddCommand(new MenuCommand(command.Execute, cmdId));
-                    Debug.Assert(omcs.FindCommand(cmdId) != null);
                 }
             }
         }

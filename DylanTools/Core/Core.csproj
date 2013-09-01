@@ -171,6 +171,7 @@
   <ItemGroup>
     <VSCTCompile Include="Core.vsct">
       <SubType>Designer</SubType>
+      <ResourceName>Menus.ctmenu</ResourceName>
     </VSCTCompile>
   </ItemGroup>
   <ItemGroup>

@@ -68,12 +68,6 @@ namespace DylanTools.DylanImportWizard
             }
             else
             {
-                System.Diagnostics.Debug.WriteLine("{0} commands found:", dte.Commands.Count);
-                foreach (Command command in dte.Commands)
-                {
-                    System.Diagnostics.Debug.WriteLine("{0}, {1}, {2}, Enabled = {3}", command.Name, command.Guid, command.ID, command.IsAvailable);
-                }
-                /*
                 System.Threading.Tasks.Task.Run(
                     () => {
                         object inObj = null;
@@ -84,7 +78,6 @@ namespace DylanTools.DylanImportWizard
                         );
                     }
                 );
-                */
             }
             throw new WizardCancelledException();
         }
