@@ -45,7 +45,7 @@ namespace DylanTools.Core.Project.ImportWizard
         public ICollectionView PageSequence
         {
             get { return (ICollectionView)GetValue(PageSequenceProperty); }
-            private set { SetValue(PageSequenceProperty, value); }
+            private set { SetValue(PageSequencePropertyKey, value); }
         }
 
         private static readonly DependencyPropertyKey PageCountPropertyKey = 
