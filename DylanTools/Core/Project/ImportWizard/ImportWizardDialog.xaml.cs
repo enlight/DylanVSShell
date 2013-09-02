@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.PlatformUI;
+﻿using System.Windows.Input;
+using Microsoft.VisualStudio.PlatformUI;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -77,13 +78,66 @@ namespace DylanTools.Core.Project.ImportWizard
 
             DataContext = this;
 
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
         private void PageSequence_CurrentChanged(object sender, EventArgs e)
         {
             SetValue(IsNextDefaultPropertyKey, PageSequence.CurrentPosition < PageCount - 1);
             SetValue(IsFinishDefaultPropertyKey, PageSequence.CurrentPosition >= PageCount - 1);
+        }
+
+        private void Browse_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            Presentation.Commands.CanExecute(this, sender, e);
+        }
+
+        private void Browse_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            Presentation.Commands.Executed(this, sender, e);
+        }
+
+        private void Finish_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = false;
+        }
+
+        private void Finish_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            DialogResult = true;
+            Close();
+        }
+
+        private void Cancel_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
+
+        private void Cancel_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            DialogResult = false;
+            Close();
+        }
+
+        private void Back_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = (PageSequence != null) && (PageSequence.CurrentPosition > 0);
+        }
+
+        private void Back_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            PageSequence.MoveCurrentToPrevious();
+        }
+
+        private void Next_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = (PageSequence != null) &&
+                           (PageSequence.CurrentPosition < (PageCount - 1));
+        }
+
+        private void Next_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            PageSequence.MoveCurrentToNext();
         }
     }
 }

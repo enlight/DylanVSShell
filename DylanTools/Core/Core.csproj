@@ -129,6 +129,7 @@
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\ImportWizardCommand.cs" />
     <Compile Include="DylanConstants.cs" />
+    <Compile Include="Presentation\Commands.cs" />
     <Compile Include="Project\DylanFileNode.cs" />
     <Compile Include="Project\DylanGeneralPropertyPage.cs" />
     <Compile Include="Project\DylanProjectFactory.cs" />
@@ -150,6 +151,7 @@
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="CorePackage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VSServices\UiShell.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources.resx">
@@ -197,7 +199,15 @@
     <Folder Include="Templates\Projects\EmptyLib\" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Presentation\Controls.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
     <Page Include="Project\ImportWizard\ImportWizardDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Project\ImportWizard\ImportWizardDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

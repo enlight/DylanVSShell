@@ -33,6 +33,7 @@ using Microsoft.VisualStudio.OLE.Interop;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Project;
 using Command = DylanTools.Core.Commands.Command;
+using DylanTools.Core.VSServices;
 
 namespace DylanTools.Core
 {
@@ -70,6 +71,8 @@ namespace DylanTools.Core
 	[Guid(GuidList.GuidDylanToolsCorePkgString)]
 	public sealed class DylanToolsCorePackage : ProjectPackage
 	{
+	    public static DylanToolsCorePackage Instance;
+
 		#region properties
 
 		public override string ProductUserContext
@@ -85,6 +88,15 @@ namespace DylanTools.Core
             get { return (EnvDTE.DTE)GetService(typeof(EnvDTE.DTE)); }
         }
 
+        /// <summary>
+        /// Obtains a reference to an interface that provides access to basic windowing 
+        /// functionality within Visual Studio.
+        /// </summary>
+        public IVsUIShell VsUiShell
+	    {
+            get { return (IVsUIShell)GetService(typeof(SVsUIShell)); }
+	    }
+
 		#endregion
 
 		/// <summary>
@@ -98,6 +110,8 @@ namespace DylanTools.Core
 		{
 			Debug.WriteLine(string.Format(CultureInfo.CurrentCulture, "Entering constructor for: {0}",
 			                              this.ToString()));
+
+		    Instance = this;
 		}
 
 		/////////////////////////////////////////////////////////////////////////////
