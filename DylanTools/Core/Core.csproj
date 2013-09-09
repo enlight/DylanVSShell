@@ -137,6 +137,7 @@
     <Compile Include="Project\DylanProjectNodeProperties.cs" />
     <Compile Include="Guids.cs" />
     <Compile Include="PkgCmdID.cs" />
+    <Compile Include="Project\ImportWizard\DylanImporter.cs" />
     <Compile Include="Project\ImportWizard\ImportWizardDialog.xaml.cs">
       <DependentUpon>ImportWizardDialog.xaml</DependentUpon>
     </Compile>

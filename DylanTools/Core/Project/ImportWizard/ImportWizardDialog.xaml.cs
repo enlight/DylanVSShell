@@ -63,13 +63,18 @@ namespace DylanTools.Core.Project.ImportWizard
             private set { SetValue(PageCountPropertyKey, value); }
         }
 
+        public DylanImporter Importer { get; set; }
+
         public ImportWizardDialog()
         {
+            Importer = new DylanImporter();
+
             _pageCollectionViewSource = new CollectionViewSource {
                 Source = new ObservableCollection<Page>(
                     new Page[] {
-                        new SourcePage { DataContext = this }
-                    })
+                        new SourcePage { DataContext = Importer }
+                    }
+                )
             };
 
             PageSequence = _pageCollectionViewSource.View;
