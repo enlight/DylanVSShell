@@ -1,6 +1,6 @@
-========================================
-Dylan for Visual Studio (Isolated) Shell
-========================================
+=====================================================
+Dylan for Visual Studio (Isolated) Shell (Terminated)
+=====================================================
 
 The aim of this project is to build a modern Visual Studio powered IDE for the
 `Dylan programming language <http://opendylan.org/>`_. Microsoft Visual Studio
